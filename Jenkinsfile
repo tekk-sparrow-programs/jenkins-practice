@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                python3 -m ensurepip --default-pip
+                sudo python3 -m ensurepip --default-pip
                 python3 -m venv venv
                 source venv/bin/activate
                 pip3 install -r requirements.txt
