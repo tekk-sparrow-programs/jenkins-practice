@@ -17,6 +17,13 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to Localhost') {
+            steps {
+                script {
+                    sh 'source venv/bin/activate && python3 helloworld.py &'
+                }
+            }
+        }
     }
     post {
         always {
