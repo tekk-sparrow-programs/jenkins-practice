@@ -10,6 +10,13 @@ pipeline {
                 }
             }
         }
+        stage('Test') {
+            steps {
+                script {
+                    sh 'source venv/bin/activate && python -m unittest discover tests'
+                }
+            }
+        }
     }
     post {
         always {
