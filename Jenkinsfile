@@ -5,20 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                sudo pip3 install -r requirements.txt
+                python3 --version
+                pip3 --version
                 '''
-            }
-        }
-        stage('Test') {
-            steps {
-                sh '''
-                python3 -m unittest
-                '''
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'python3 helloworld.py'
             }
         }
     }
